@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stackleader</groupId>
     <artifactId>com.stackleader.training.osgi.scr</artifactId>
     <version>0.0.1</version>
+    <!--    Note the non-standard packaging type of 'bundle'-->
     <packaging>bundle</packaging>
+    
     <parent>
         <groupId>com.stackleader</groupId>
         <artifactId>com.stackleader.training.osgi</artifactId>
@@ -14,11 +18,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
    
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    
     <dependencies>
         <dependency>
             <groupId>biz.aQute.bnd</groupId>
@@ -38,15 +37,14 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>
-                            !${project.artifactId},
-                            *
-                        </Import-Package>
-                        <Export-Package>
-                            ${project.artifactId}
-                        </Export-Package>
+                        <!--This instruction tells the maven bundle plugin to process 
+                         all SCR annotations and include the component declarations in 
+                        our manfiest file. -->
                         <Service-Component>*</Service-Component>
+                        <!-- This is included as a best practice, by default this plugin 
+                        will expose all packages. In our case, we do not want to expose 
+                        any packages.-->
+                        <Export-Package></Export-Package>
                     </instructions>
                 </configuration>
             </plugin>  
