@@ -17,12 +17,17 @@
                 <version>2.4.0</version>
                 <scope>compile</scope>
             </dependency>
-             <!--SLF4j is added as our logging api-->
+            <!--SLF4j is added as our logging api-->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.7</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.stackleader</groupId>
+                <artifactId>com.stackleader.training.osgi.scr.greeting.service</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -30,7 +35,7 @@
     <build>
         <pluginManagement>
             <plugins>
-                 <!--This maven plugin will be used to generate our OSGi manifest file. -->
+                <!--This maven plugin will be used to generate our OSGi manifest file. -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
@@ -42,6 +47,8 @@
 
     <modules>
         <module>com.stackleader.training.osgi.scr</module>
+        <module>com.stackleader.training.osgi.scr.greeting.service</module>
+        <module>com.stackleader.training.osgi.scr.greeting.service.client</module>
     </modules>
 </project>
 

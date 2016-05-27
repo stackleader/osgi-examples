@@ -1,1 +1,3 @@
 /com.stackleader.training.osgi.scr/target/
+/com.stackleader.training.osgi.scr.greeting.service/target/
+/com.stackleader.training.osgi.scr.greeting.service.client/target/

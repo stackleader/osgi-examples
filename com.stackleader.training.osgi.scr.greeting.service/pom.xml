@@ -6,7 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stackleader</groupId>
-    <artifactId>com.stackleader.training.osgi.scr</artifactId>
+    <artifactId>com.stackleader.training.osgi.scr.greeting.service</artifactId>
+    <version>0.0.1</version>
     <!--    Note the non-standard packaging type of 'bundle'-->
     <packaging>bundle</packaging>
     
@@ -40,15 +41,18 @@
                          all SCR annotations and include the component declarations in 
                         our manfiest file. -->
                         <Service-Component>*</Service-Component>
-                        <!-- This is included as a best practice, by default this plugin 
-                        will expose all packages. In our case, we do not want to expose 
-                        any packages.-->
-                        <Export-Package></Export-Package>
+                        <!--We will expose only the package containing our interface, and hide our implementation class.-->
+                        <Export-Package>${project.artifactId}</Export-Package>
+                        <!--We need to explicitly specify to the plugin not to import packages exported by this bundle. 
+                        This will prevent unnecessary and potentially problematic imports from appearing in our MANIFEST -->
+                        <Import-Package>
+                            !${project.artifactId},
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>  
         </plugins>
     </build>
-    
 </project>
 
