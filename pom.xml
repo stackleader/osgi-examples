@@ -41,6 +41,11 @@
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>3.0.1</version>
                 </plugin>
+                <plugin>
+                    <groupId>biz.aQute.bnd</groupId>
+                    <artifactId>bnd-maven-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -49,6 +54,8 @@
         <module>com.stackleader.training.osgi.scr</module>
         <module>com.stackleader.training.osgi.scr.greeting.service</module>
         <module>com.stackleader.training.osgi.scr.greeting.service.client</module>
+        <module>com.stackleader.training.osgi.bnd.plugin</module>
+        <module>com.stackleader.training.osgi.felix.plugin</module>
     </modules>
 </project>
 

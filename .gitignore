@@ -1,3 +1,5 @@
 /com.stackleader.training.osgi.scr/target/
 /com.stackleader.training.osgi.scr.greeting.service/target/
 /com.stackleader.training.osgi.scr.greeting.service.client/target/
+/com.stackleader.training.osgi.felix.plugin/target/
+/com.stackleader.training.osgi.bnd.plugin/target/
