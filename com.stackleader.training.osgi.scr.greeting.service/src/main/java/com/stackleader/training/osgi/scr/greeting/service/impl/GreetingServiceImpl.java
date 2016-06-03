@@ -1,7 +1,7 @@
 package com.stackleader.training.osgi.scr.greeting.service.impl;
 
-import aQute.bnd.annotation.component.Component;
 import com.stackleader.training.osgi.scr.greeting.service.GreetingService;
+import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

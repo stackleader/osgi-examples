@@ -1,10 +1,10 @@
 package com.stackleader.training.osgi.scr.services.consumer;
 
-import aQute.bnd.annotation.component.Activate;
-import aQute.bnd.annotation.component.Component;
-import aQute.bnd.annotation.component.Deactivate;
-import aQute.bnd.annotation.component.Reference;
 import com.stackleader.training.osgi.scr.greeting.service.GreetingService;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +50,7 @@ public class GreetingServiceClient {
     }
 
     /**
-     * This method demonstrates the unbind life-cycle hook. 
+     * This method demonstrates the unbind life-cycle hook.
      */
     public void removeGreetingService(GreetingService greetingService) {
         LOG.info("GreetingService removed");

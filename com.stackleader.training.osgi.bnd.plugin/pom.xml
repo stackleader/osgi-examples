@@ -17,8 +17,12 @@
     </parent>
     <dependencies>
         <dependency>
-            <groupId>biz.aQute.bnd</groupId>
-            <artifactId>bndlib</artifactId>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.annotation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -39,6 +43,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <bnd>
+                        <![CDATA[
+                        -exportcontents: ${packages;VERSIONED}
+                        ]]>
+                    </bnd>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

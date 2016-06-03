@@ -19,8 +19,12 @@
    
     <dependencies>
         <dependency>
-            <groupId>biz.aQute.bnd</groupId>
-            <artifactId>bndlib</artifactId>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.annotation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -36,12 +40,8 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <!--This instruction tells the maven bundle plugin to process 
-                         all SCR annotations and include the component declarations in 
-                        our manfiest file. -->
-                        <Service-Component>*</Service-Component>
                         <!-- This is included as a best practice, by default this plugin 
-                        will expose all packages. In our case, we do not want to expose 
+                        will expose all <groupId>.<artifactId>.* packages. In our case, we do not want to expose 
                         any packages.-->
                         <Export-Package></Export-Package>
                     </instructions>
